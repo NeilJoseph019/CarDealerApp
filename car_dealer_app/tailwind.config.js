@@ -8,9 +8,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'pattern': "url('/pattern.png')",
+        'hero-bg': "url('/hero-bg.png')"
+      },
+      fontFamily: {
+        logo: ['Dosis', 'sans-serif'],
+        headings: ['Lilita One', 'sans-serif'],
+        paragraphs: ['Josefin Slab', 'serif'],
       },
     },
   },
