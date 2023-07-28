@@ -1,8 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import Footer from '@Components/footer/Footer'
+import Navbar from '@Components/navbar/Navbar'
+
 
 export const metadata: Metadata = {
   title: 'Car Dealer App',
@@ -16,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className='relative'>
+        <Navbar/>
+        {children}
+        <Footer/>
+      </body>
     </html>
   )
 }
