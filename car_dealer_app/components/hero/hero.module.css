@@ -3,7 +3,7 @@
   }
 
 .hero__title__container{
-    @apply flex-1 pt-36 sm:px-16 px-6
+    @apply flex-1 pt-20 sm:px-16 px-6;
 }
   
 .hero__title {
