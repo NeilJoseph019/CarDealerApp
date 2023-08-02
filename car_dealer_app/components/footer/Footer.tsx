@@ -23,11 +23,11 @@ const Footer = () => {
         <div className='ml-7 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-8 '>
           {
             footerLinks.map(link =>(
-              <div className='flex flex-col flex-wrap'>
+              <div key={link.title} className='flex flex-col flex-wrap'>
                 <p className='font-bold'> {link.title} </p>
                 {
                   link.links.map(links =>(
-                    <Link href={links.url} className='hover:bg-slate-200 rounded-[1rem] px-2' >{links.title}</Link>
+                    <Link key={links.title} href={links.url} className='hover:bg-slate-200 rounded-[1rem] px-2' >{links.title}</Link>
                   ))
                 }
               </div>
