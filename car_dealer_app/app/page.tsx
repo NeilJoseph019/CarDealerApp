@@ -1,11 +1,10 @@
 // @ts-ignore
-import OptionsBar from '@/components/optionsBar/OptionsBar'
-import SearchBar from '@/components/searchBar/SearchBar'
 import Hero from '@Components/hero/Hero'
 import Image from 'next/image'
 
 import {getCarData} from '@/utils'
 import CarOverviewCard from '@/components/carOverviewCard/CarOverviewCard'
+import FilterForm from '@/components/filterForm/FilterForm'
 
 export default async function Home() {
 
@@ -16,13 +15,8 @@ export default async function Home() {
   return (
     <main className="overflow-hidden">
       <Hero/>
-      <div className='grid grid-cols-2 gap-5 m-3'>
-        <div>
-          <SearchBar/>
-        </div>
-        <div>
-          <OptionsBar/>
-        </div>
+      <div>
+        <FilterForm/>
       </div>
       <div>
         {
@@ -34,7 +28,10 @@ export default async function Home() {
           ): (
             <section className='flex md:flex-col-3 flex-wrap m-4 p-2'>
             { carData.map((car, index)  => (
+              <div key={index}>
                   <CarOverviewCard car={car} index={index}/>
+              </div>
+                  
                ))
             }
             </section>
