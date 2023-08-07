@@ -1,6 +1,7 @@
 "use client"
 
 import React, {useState} from 'react'
+import { useRouter } from 'next/navigation'
 import SearchBar from '../searchBar/SearchBar'
 
 const FilterForm = () => {
@@ -8,9 +9,34 @@ const FilterForm = () => {
     const [selectedManufacturer, setSelectedManufacturer] = useState('')
     const [selectedModel, setSelectedModel] = useState('')
 
+    const router = useRouter()
 
-    const handleSubmit = (event : any)=>{
+
+    const handleSubmit = (event : React.FormEvent<HTMLFormElement>)=>{
         event.preventDefault()
+
+        if (selectedManufacturer === '' && selectedModel === '' ){
+            return alert('Please fill in the search bar !')
+        }
+
+        const searchParams = new URLSearchParams(window.location.search) // This is to get the URL in the URL-bar
+        
+        if(selectedManufacturer){  // To update or delete the 'manufacturer' search parameter based on the 'manufacturer' value
+            searchParams.set('manufacturer', selectedManufacturer.toLowerCase())
+        }else{
+            searchParams.delete('manufacturer')
+        }
+
+        if(selectedModel){  // To update or delete the 'model' search parameter based on the 'model' value
+            searchParams.set('model', selectedModel.toLowerCase())
+        }else{
+            searchParams.delete('model')
+        }
+
+        // Generating the new pathname with the updated search parameters
+        const newParams = `${window.location.pathname}?${searchParams.toString()}`
+
+        router.push(newParams)
 
     }
 

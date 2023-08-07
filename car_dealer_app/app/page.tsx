@@ -1,14 +1,22 @@
 // @ts-ignore
 import Hero from '@Components/hero/Hero'
-import Image from 'next/image'
 
 import {getCarData} from '@/utils'
 import CarOverviewCard from '@/components/carOverviewCard/CarOverviewCard'
 import FilterForm from '@/components/filterForm/FilterForm'
+import { filterProps } from '@/types';
 
-export default async function Home() {
+interface paramsProps {
+  searchParams : filterProps;
+}
 
-  const carData = await getCarData()
+export default async function Home({ searchParams } : paramsProps) {
+
+  const carData = await getCarData({
+    manufacturer :searchParams.manufacturer || 'bmw',
+    model : searchParams.model || '',
+    limit : searchParams.limit || 10,
+  })
 
   const dataAvailable = !Array.isArray(carData) || carData.length <1 || !carData
 
