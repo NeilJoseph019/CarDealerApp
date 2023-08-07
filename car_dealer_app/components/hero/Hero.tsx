@@ -11,7 +11,6 @@ const Hero = () => {
       <div className={styles.hero__image_container}>
           <div className={styles.hero__image}>
             <Image src="/hero.png" alt='Hero car img' fill  priority className='object-contain' />
-      
           </div>
       </div>
     </div>

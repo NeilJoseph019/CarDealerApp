@@ -15,7 +15,7 @@ const CarOverviewCard = ({ car, index } : carCardProps) => {
   const [modalOpen, setModalOpen] = useState(false)
 
   return (
-    <div className='m-5 bg-slate-100 w-[24rem] p-[1rem] border border-zinc-300 rounded-[1rem] shadow-lg hover:bg-white'> 
+    <div className='m-5 bg-slate-100 w-[18rem] md:w-[20rem] p-[1rem] border border-zinc-300 rounded-[1rem] shadow-lg hover:bg-white'> 
         <h2 className='font-paragraphs font-bold text-[26px]'> {car.make} {car.model} </h2>
         <div>
           <p className='flex text-[30px]'>

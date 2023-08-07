@@ -28,7 +28,7 @@ const SearchBar = ( {selectedManufacturer, setSelectedManufacturer, selectedMode
       );
 
   return (
-    <div className='grid grid-cols-2 gap-3'> 
+    <div className='grid md:grid-cols-2 gap-5 m-3 '> 
 
       <Combobox value={selectedManufacturer} onChange={setSelectedManufacturer}>
         <div className="relative">
@@ -98,10 +98,14 @@ const SearchBar = ( {selectedManufacturer, setSelectedManufacturer, selectedMode
         </div>
       </Combobox>
 
-      <input placeholder='A4' className='py-2 pl-3 pr-10 h-[2.5rem] text-sm rounded-[1.5rem] border-2 border-teal-600 shadow-md'
-      value={selectedModel}
-      onChange={(event) => setSelectedModel(event.target.value)}
-      />
+      <div className='w-ful'>
+        <input placeholder='A4' className='py-2 pl-3 pr-10 h-[2.5rem] w-full text-sm rounded-[1.5rem] border-2 border-teal-600 shadow-md'
+        value={selectedModel}
+        onChange={(event) => setSelectedModel(event.target.value)}
+        />
+      </div>
+
+      
     </div>
   )
 }

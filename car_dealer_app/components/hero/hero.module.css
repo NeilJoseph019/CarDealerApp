@@ -1,13 +1,13 @@
 .hero {
-    @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440px] mx-auto text-black;
+    @apply grid md:grid-cols-2 gap-5 relative z-0 max-w-[1440px] mx-auto xl:h-[40rem] text-black;
   }
 
 .hero__title__container{
-    @apply flex-1 pt-20 sm:px-16 px-6;
+    @apply flex-1 pt-20 sm:px-16 px-6 xl:h-[40rem];
 }
   
 .hero__title {
-    @apply font-headings sm:text-[64px] text-5xl ;
+    @apply font-headings sm:text-[64px] text-5xl  ;
   }
   
 .hero__subtitle {
@@ -15,10 +15,10 @@
   }
   
 .hero__image_container {
-    @apply xl:flex-[2] flex justify-end items-end w-full xl:h-screen ;
+    @apply w-full xl:h-screen ;
   }
   
 .hero__image {
-    @apply relative xl:w-full w-[90%] max-sm:h-[20rem] xl:h-full h-[40rem] z-0;
+    @apply relative xl:w-full w-[90%] max-sm:h-[20rem] h-[40rem] z-0;
   }
   

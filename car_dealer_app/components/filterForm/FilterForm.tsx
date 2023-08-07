@@ -8,19 +8,30 @@ const FilterForm = () => {
     const [selectedManufacturer, setSelectedManufacturer] = useState('')
     const [selectedModel, setSelectedModel] = useState('')
 
+
+    const handleSubmit = (event : any)=>{
+        event.preventDefault()
+
+    }
+
   return (
-    <>
-    <div className='flex flex-col sm:flex-wrap gap-5 m-3 '>
+    <form onSubmit={handleSubmit}>
         <div>
-          <SearchBar 
-          selectedManufacturer={selectedManufacturer} 
-          setSelectedManufacturer={setSelectedManufacturer} 
-          selectedModel={selectedModel}
-          setSelectedModel={setSelectedModel}
-          />
+        
+            <SearchBar 
+            selectedManufacturer={selectedManufacturer} 
+            setSelectedManufacturer={setSelectedManufacturer} 
+            selectedModel={selectedModel}
+            setSelectedModel={setSelectedModel}
+            />
+         
         </div>
-    </div>
-    </>
+        <div className='m-4 w-[7rem]'>
+            <button type='submit' className='px-3 py-2 rounded-[1.5rem] border-2 border-stone-600 hover:bg-slate-200 shadow-lg'>
+                Search
+            </button>
+        </div>
+    </form>
   )
 }
 
